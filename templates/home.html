@@ -1,4 +1,70 @@
-<h1>
-    Hello World
-    
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tirth, the realtor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>House price prediction in Boston</h1>
+<p>CRIM - per capita crime rate by town</p>
+<p>ZN - proportion of residential land zoned for lots over 25,000 sq.ft.</p>
+
+<p>INDUS - proportion of non-retail business acres per town</p>
+
+<p>CHAS - Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)</p>
+
+<p>NOX - nitric oxides concentration (parts per 10 million)</p>
+
+<p>RM - average number of rooms per dwelling</p>
+
+<p>AGE - proportion of owner-occupied units built prior to 1940</p>
+
+<p>DIS - weighted distances to five Boston employment centres</p>
+
+<p>RAD - index of accessibility to radial highways</p>
+
+<p>TAX - full-value property-tax rate per $10k</p>
+
+<p>PTRATIO - pupil-teacher ratio by town</p>
+
+<p>BLACK - 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town</p>
+<p>LSTAT - % lower status of the population</p>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
