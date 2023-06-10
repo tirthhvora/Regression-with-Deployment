@@ -1,0 +1,23 @@
+Hello, while deploying this project I have faced multiple errors, which kept me stuck for hours
+Kindly read this file so that you quickly fix the issues
+
+what all new we did in this project
+
+after making the model and evaluating it, and making a test prediction we 
+
+import pickle
+pickle.dump(RegressionModel, open("my_model.pkl",'wb'))
+
+then we went to our github account, created a repository, and then we went to a local folder in our pc, opened terminal there and did git clone <link of repository>
+
+then we copied the ipynb and pkl file in the local cloned folder and opened it with vs code
+
+then we have to create a new enviornment
+conda create -p venv python==3.7 -y
+
+and then we have to activate the enviornment
+(errors faced) fixed through anaconda prompt
+
+then we did
+git config --global user.name "Tirth Vora"
+git config --global user.email "tirthdatascience@gmail.com"
