@@ -1,10 +1,12 @@
 import pickle
 from flask import Flask, request, app, jsonify, url_for, render_template
+#importing Flask class from flask module
 import numpy as np
 import pandas as pd
 
 app = Flask(__name__)
-#starting point from where app will be run
+#when __name__ is used as an argument to the flask constructor, it tells flask to use current module as starting point of the application
+
 
 regression_model = pickle.load(open("regression_model.pkl", 'rb'))
 scalar = pickle.load(open('scaling.pkl', 'rb'))
@@ -13,14 +15,16 @@ scalar = pickle.load(open('scaling.pkl', 'rb'))
 @app.route('/')
 def home():
     return render_template('home.html')
+#render_template takes the html template as an argument and returns the rendered html content
+
 
 #now we are going to make a predict API, where using postman or any other tool, we can send
 #a request to our app, and then get the output
 
 @app.route('/predict_api', methods = ['POST'])
-
+#this route will be triggered when a post request is made to the /predict_api url
 def predict_api():
-    data = request.json['data']
+    data = request.json['data'] #data is a key of the dictionary
     #it means that whenever I hit this predict_api, the input will be in the json format that will be captured in the data key
     #after post request, whatever is in the 'data' we will capture it using request.json and it will get stored in the data variable
     print(data)
